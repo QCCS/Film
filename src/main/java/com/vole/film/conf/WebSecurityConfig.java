@@ -21,8 +21,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("gakki")
-                .password("123")
+                .withUser("zhouli")
+                .password("mac123")
                 .roles("ADMIN");
     }
 
@@ -33,8 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().disable().headers().disable()//关闭跨站、跨域、请求头
                 .authorizeRequests()
-                .antMatchers("/", "/static/**", "/film/**", "/webSite/**", "/webSiteInfo/**", "/aboutMe").permitAll() // 配置不需要身份认证的请求地址
-                .anyRequest().authenticated() // 其他所有访问路径需要身份认证
+                .antMatchers("/",  "/templates/**","/static/**", "/film/**", "/webSite/**", "/webSiteInfo/**", "/aboutMe").permitAll() // 配置不需要身份认证的请求地址
+                .anyRequest().authenticated()// 其他所有访问路径需要身份认证
                 .and()
                 .formLogin()
                 .loginPage("/login") // 指定登录请求地址

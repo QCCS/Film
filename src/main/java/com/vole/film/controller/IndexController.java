@@ -27,8 +27,11 @@ public class IndexController {
      * @return
      */
     @RequestMapping("/login")
-    public String login(){
-        return "/login";
+    public ModelAndView login(){
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("title","登录页");
+        mav.setViewName("login");
+        return mav;
     }
 
     /**
@@ -36,8 +39,11 @@ public class IndexController {
      * @return
      */
     @RequestMapping("/admin")
-    public String toAdmin(){
-        return "/admin/main";
+    public ModelAndView toAdmin(){
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("title","管理系统首页");
+        mav.setViewName("admin/main");
+        return mav;
     }
 
     /**

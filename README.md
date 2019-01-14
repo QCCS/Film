@@ -1,3 +1,5 @@
+mvn clean package -Dmaven.test.skip=true
+
 # Film
 #### 一、项目简介：
 

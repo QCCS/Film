@@ -13,6 +13,13 @@ spring:
     show-sql: true
   thymeleaf:
     cache: false
+  resources:
+      static-locations: classpath:/static/,classpath:/templates/
+# 需要加上，才能打包到jar里面
+  mvc:
+    static-path-pattern: /**
+
+
 
 # 图片保存的地址
 imageFilePath: /Users/zhouli/mygithub/film/src/main/webapp/static/filmImage/
